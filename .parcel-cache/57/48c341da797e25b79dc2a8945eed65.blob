@@ -1,0 +1,16 @@
+/* $breakpoints: (
+  $med: 600px,
+  $lg: 900px,
+  $xlg: 1200px,
+); */
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  font-size: 1.8rem;
+}
+/*# sourceMappingURL=index.HASH_REF_4e4b48d14b05138322efb086ec8548c3.css.map */

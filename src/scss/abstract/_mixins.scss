@@ -1,0 +1,20 @@
+@use './breakpoints' as *;
+
+$max-width: 1200px;
+
+@mixin mq($key) {
+  $size: map-get($breakpoints, $key);
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin adaptive-value($property, $pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $max-width - 320;
+
+  $property: (
+    #{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth})
+  );
+}

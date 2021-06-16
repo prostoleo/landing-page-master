@@ -1,0 +1,13 @@
+@use './fonts' as *;
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background: #fff;
+  margin: 0;
+  font-family: $Rubik;
+  font-size: 1.8rem;
+  // overflow-x: hidden;
+}

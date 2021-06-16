@@ -2,9 +2,9 @@
   "name": "landing-page-master",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.html",
+  "main": "src/index.html",
   "scripts": {
-    "start": "parcel dist/index.html --public-url ./dist/",
+    "start": "parcel src/index.html",
     "build": "parcel build src/index.html"
   },
   "repository": {
@@ -24,5 +24,16 @@
     "parcel": "^2.0.0-beta.2",
     "postcss": "^8.3.4",
     "sass": "^1.35.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          "> 0.25%",
+          "last 4 versions",
+          "ie >= 9"
+        ]
+      }
+    }
   }
 }
