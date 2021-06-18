@@ -1,0 +1,80 @@
+@use '../abstract/index' as *;
+@use '../components/index' as *;
+@use '../abstract/mixins' as *;
+
+.download-section {
+  padding: 5rem 0;
+  // .download-section__text
+
+  &__text {
+    text-align: center;
+  }
+
+  // .download-section__title
+
+  &__title {
+    @extend %tpl-secondary-title;
+  }
+
+  // .download-section__p
+
+  &__p {
+    margin-bottom: 2.5em;
+  }
+
+  // .download-section__browsers
+
+  &__browsers {
+  }
+}
+.container {
+}
+.browsers-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 2.5rem 0;
+  // .browsers-download__card
+
+  &__card {
+  }
+}
+.card {
+  display: grid;
+
+  grid-template-rows: repeat(4, auto);
+  justify-items: center;
+  padding: 1.5em;
+
+  box-shadow: 2px 5px 7px $neutral-dark-blue-shadow,
+    -2px 5px 7px $neutral-dark-blue-shadow;
+
+  border-radius: 1em;
+
+  background: url("../img/bg-dots.svg") no-repeat;
+  background-size: contain;
+  background-position: bottom 27% right;
+
+  // .card__img
+
+  &__img {
+    margin-bottom: 2em;
+  }
+
+  // .card__title
+
+  &__title {
+    font-size: 2rem;
+  }
+
+  // .card__p
+
+  &__p {
+    margin-bottom: 4em;
+  }
+}
+.btn {
+}
+.btn-primary {
+}

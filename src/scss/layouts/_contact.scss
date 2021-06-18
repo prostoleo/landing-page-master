@@ -1,0 +1,114 @@
+@use '../abstract/index' as *;
+
+.contact-section {
+  padding: 6rem 0 2.5rem;
+
+  background: $primary-soft-blue;
+  // .contact-section__content
+
+  &__content {
+    color: white;
+    text-align: center;
+  }
+
+  // .contact-section__subtitle
+
+  &__subtitle {
+    color: white;
+
+    font-size: 1.4rem;
+    font-weight: 400;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5em;
+
+    margin-bottom: 1.5em;
+  }
+
+  // .contact-section__title
+
+  &__title {
+    color: white;
+    margin-bottom: 1em;
+  }
+
+  // .contact-section__form
+
+  &__form {
+  }
+}
+.container {
+}
+.form-contact {
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+  gap: 2rem 0;
+  // .form-contact__wrapper
+
+  &__wrapper {
+  }
+
+  // .form-contact__input
+
+  &__input {
+    display: block;
+    width: 100%;
+    border: 3px solid transparent;
+
+    padding: 0.8em 1.2em;
+    font-size: 1.6rem;
+    border-radius: 5px;
+
+    color: $neutral-dark-blue;
+
+    &:focus {
+      // border: 3px solid rgb(32, 190, 230);
+      outline: 3px solid $neutral-grayish-blue;
+    }
+
+    &.error {
+      // outline: 2px solid $primary-soft-red;
+      border: 3px solid $primary-soft-red;
+    }
+  }
+
+  // .form-contact__error
+
+  &__error {
+    text-align: left;
+
+    font-style: italic;
+    font-size: 1.2rem;
+
+    background: $primary-soft-red;
+
+    padding: 0.4em 1em;
+    border-bottom-left-radius: 0.5em;
+    border-bottom-right-radius: 0.5em;
+  }
+
+  // .form-contact__submit
+
+  &__submit {
+    display: inline-block;
+    padding: 1em 1.75em;
+    color: white;
+
+    background: $primary-soft-red;
+    border-radius: 0.5rem;
+
+    border: 2px solid transparent;
+    transition: all 350ms ease-in-out;
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      border: 2px solid $primary-soft-red;
+      color: $primary-soft-red;
+    }
+  }
+}

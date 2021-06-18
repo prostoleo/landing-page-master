@@ -1,4 +1,5 @@
 @use './fonts' as *;
+@use '../abstract/index' as *;
 
 * {
   font-family: $Rubik;
@@ -15,4 +16,18 @@ body {
   font-family: $Rubik;
   font-size: 1.8rem;
   overflow-x: hidden !important;
+}
+
+// prettier-ignore
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $neutral-dark-blue;
+}
+
+p {
+  color: $neutral-grayish-blue;
 }

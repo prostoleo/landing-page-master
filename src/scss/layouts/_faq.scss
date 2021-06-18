@@ -1,0 +1,119 @@
+@use '../abstract/index' as *;
+
+.faq-section {
+  padding: 5rem 0;
+  // .faq-section__container
+
+  &__container {
+    max-width: 900px;
+  }
+
+  // .faq-section__text
+
+  &__text {
+    margin-bottom: 3.5rem;
+  }
+
+  // .faq-section__title
+
+  &__title {
+    @extend %tpl-secondary-title !optional;
+  }
+
+  // .faq-section__p
+
+  &__p {
+  }
+
+  // .faq-section__accordeon
+
+  &__accordeon {
+  }
+
+  // .faq-section__for-btn
+
+  &__for-btn {
+    margin-top: 4.5rem;
+
+    display: flex;
+    justify-content: center;
+  }
+}
+.container {
+}
+.accordeon {
+  // .accordeon__item
+
+  &__item {
+    border-bottom: 1px solid $neutral-grayish-blue;
+
+    margin-bottom: 2.5rem;
+    padding: 1.5rem 0;
+
+    // .accordeon__item_active
+
+    &_active {
+      .accordeon__text {
+        display: block;
+
+        /* &.open {
+          max-height: 100%;
+          overflow: unset;
+        } */
+      }
+    }
+
+    &.open {
+      .accordeon__text {
+        max-height: 100%;
+        overflow: unset;
+      }
+    }
+  }
+
+  // .accordeon__header
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    padding: 1rem 0;
+  }
+
+  // .accordeon__title
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  // .accordeon__arrow
+
+  &__arrow {
+    flex: 0 0 15px;
+    height: 15px;
+  }
+
+  // .accordeon__content
+
+  &__content {
+  }
+
+  // .accordeon__text
+
+  &__text {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+
+    // margin-top: 0.75rem;
+    // padding: 1.5rem 0;
+
+    margin: 0.75rem 0;
+
+    transition: all 350ms ease-in-out;
+  }
+}

@@ -117,10 +117,10 @@
         <div class="container">
           <div class="features-section__text">
             <h2 class="features-section__title">Features</h2>
-            <p class="features-section__text">
+            <p class="features-section__p">
               Our aim is to make it quick and easy for you to access your
               favourite websites. Your bookmarks sync between your devices so
-              you can access them on the go.
+              you can access them on the&nbsp;go.
             </p>
           </div>
           <!-- /.features-section__text -->
@@ -134,11 +134,10 @@
               <button class="tab__btn">Easy Sharing</button>
             </div>
             <div class="tab__content content-tab">
-              <div class="
-                  content-tab__element content-tab__element_active
-                  element-tab
-                ">
-                <img src="/illustration-features-tab-1.d3cb8ac2.svg" alt="image feature-1" class="content-tab__img">
+              <div class="content-tab__item content-tab__item_active item-tab">
+                <div class="content-tab__img-wrapper">
+                  <img src="/illustration-features-tab-1.d3cb8ac2.svg" alt="image feature-1" class="content-tab__img">
+                </div>
                 <div class="content-tab__text text-tab">
                   <h3 class="text-tab__title">Bookmark in one click</h3>
                   <p class="text-tab__subtitle">
@@ -146,11 +145,15 @@
                     drag-and-drop interface gives you complete control over how
                     you manage your favourite sites.
                   </p>
-                  <button class="btn text-tab__btn">More info</button>
+                  <button class="btn btn-primary text-tab__btn">
+                    More info
+                  </button>
                 </div>
               </div>
-              <div class="content-tab__element element-tab">
-                <img src="/illustration-features-tab-2.2fe533d3.svg" alt="image feature-2" class="content-tab__img">
+              <div class="content-tab__item item-tab">
+                <div class="content-tab__img-wrapper">
+                  <img src="/illustration-features-tab-2.2fe533d3.svg" alt="image feature-2" class="content-tab__img">
+                </div>
                 <div class="content-tab__text text-tab">
                   <h3 class="text-tab__title">Intelligent search</h3>
                   <p class="text-tab__subtitle">
@@ -158,11 +161,15 @@
                     in no time at all. No need to trawl through all of your
                     bookmarks.
                   </p>
-                  <button class="btn text-tab__btn">More info</button>
+                  <button class="btn btn-primary text-tab__btn">
+                    More info
+                  </button>
                 </div>
               </div>
-              <div class="content-tab__element element-tab">
-                <img src="/illustration-features-tab-3.a031fe90.svg" alt="image feature-3" class="content-tab__img">
+              <div class="content-tab__item item-tab">
+                <div class="content-tab__img-wrapper">
+                  <img src="/illustration-features-tab-3.a031fe90.svg" alt="image feature-3" class="content-tab__img">
+                </div>
                 <div class="content-tab__text text-tab">
                   <h3 class="text-tab__title">Share your bookmarks</h3>
                   <p class="text-tab__subtitle">
@@ -170,7 +177,9 @@
                     Create a shareable link that you can send at the click of a
                     button.
                   </p>
-                  <button class="btn text-tab__btn">More info</button>
+                  <button class="btn btn-primary text-tab__btn">
+                    More info
+                  </button>
                 </div>
               </div>
             </div>
@@ -189,32 +198,32 @@
               you’ve got a favourite you’d like us to prioritize.
             </p>
           </div>
+          <!-- /.download-section__text -->
+          <div class="download-section__browsers browsers-download">
+            <div class="browsers-download__card card">
+              <img src="/logo-chrome.0d300711.svg" alt="logo chrome" class="card__img">
+              <h4 class="card__title">Add to Chrome</h4>
+              <p class="card__p">Minimum version 62</p>
+              <button class="btn btn-primary">Add & Install Extension</button>
+            </div>
+            <!-- /.card -->
+            <div class="browsers-download__card card">
+              <img src="/logo-firefox.7cf346b2.svg" alt="logo firefox" class="card__img">
+              <h4 class="card__title">Add to Firefox</h4>
+              <p class="card__p">Minimum version 55</p>
+              <button class="btn btn-primary">Add & Install Extension</button>
+            </div>
+            <!-- /.card -->
+            <div class="browsers-download__card card">
+              <img src="/logo-opera.51044463.svg" alt="logo opera" class="card__img">
+              <h4 class="card__title">Add to Opera</h4>
+              <p class="card__p">Minimum version 46</p>
+              <button class="btn btn-primary">Add & Install Extension</button>
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.browsers-download -->
         </div>
-        <!-- /.download-section__text -->
-        <div class="download-section__browsers browsers-download">
-          <div class="browsers-download__card card">
-            <img src="/logo-chrome.0d300711.svg" alt="logo chrome" class="card__img">
-            <h4 class="card__title">Add to Chrome</h4>
-            <p class="card__p">Minimum version 62</p>
-            <button class="btn btn-primary">Add & Install Extension</button>
-          </div>
-          <!-- /.card -->
-          <div class="browsers-download__card card">
-            <img src="/logo-firefox.7cf346b2.svg" alt="logo firefox" class="card__img">
-            <h4 class="card__title">Add to Firefox</h4>
-            <p class="card__p">Minimum version 55</p>
-            <button class="btn btn-primary">Add & Install Extension</button>
-          </div>
-          <!-- /.card -->
-          <div class="browsers-download__card card">
-            <img src="/logo-opera.51044463.svg" alt="logo opera" class="card__img">
-            <h4 class="card__title">Add to Opera</h4>
-            <p class="card__p">Minimum version 46</p>
-            <button class="btn btn-primary">Add & Install Extension</button>
-          </div>
-          <!-- /.card -->
-        </div>
-        <!-- /.browsers-download -->
       </section>
       <!-- /.download-section -->
 
@@ -236,16 +245,14 @@
                 <img src="/icon-arrow.139857be.svg" alt="arrow" class="accordeon__arrow">
               </div>
               <!-- /.accordeon__header -->
-              <div class="accordeon__content">
-                <p class="accordeon__text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-                  tincidunt justo eget ultricies fringilla. Phasellus blandit
-                  ipsum quis quam ornare mattis.
-                </p>
-              </div>
+              <p class="accordeon__text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                tincidunt justo eget ultricies fringilla. Phasellus blandit
+                ipsum quis quam ornare mattis.
+              </p>
             </div>
             <!-- /.accordeon__item -->
-            <div class="accordeon__item accordeon__item_active">
+            <div class="accordeon__item accordeon__item_active open">
               <div class="accordeon__header">
                 <h4 class="accordeon__title">
                   How can I request a new browser?
@@ -253,16 +260,14 @@
                 <img src="/icon-arrow.139857be.svg" alt="arrow" class="accordeon__arrow">
               </div>
               <!-- /.accordeon__header -->
-              <div class="accordeon__content">
-                <p class="accordeon__text">
-                  Vivamus luctus eros aliquet convallis ultricies. Mauris augue
-                  massa, ultricies non ligula. Suspendisse imperdiet. Vivamus
-                  luctus eros aliquet convallis ultricies. Mauris augue massa,
-                  ultricies non ligula. Suspendisse imperdie tVivamus luctus
-                  eros aliquet convallis ultricies. Mauris augue massa,
-                  ultricies non ligula. Suspendisse imperdiet.
-                </p>
-              </div>
+              <p class="accordeon__text">
+                Vivamus luctus eros aliquet convallis ultricies. Mauris augue
+                massa, ultricies non ligula. Suspendisse imperdiet. Vivamus
+                luctus eros aliquet convallis ultricies. Mauris augue massa,
+                ultricies non ligula. Suspendisse imperdie tVivamus luctus eros
+                aliquet convallis ultricies. Mauris augue massa, ultricies non
+                ligula. Suspendisse imperdiet.
+              </p>
             </div>
             <!-- /.accordeon__item -->
             <div class="accordeon__item">
@@ -271,14 +276,14 @@
                 <img src="/icon-arrow.139857be.svg" alt="arrow" class="accordeon__arrow">
               </div>
               <!-- /.accordeon__header -->
-              <div class="accordeon__content">
-                <p class="accordeon__text">
-                  Sed consectetur quam id neque fermentum accumsan. Praesent
-                  luctus vestibulum dolor, ut condimentum urna vulputate eget.
-                  Cras in ligula quis est pharetra mattis sit amet pharetra
-                  purus. Sed sollicitudin ex et ultricies bibendum.
-                </p>
-              </div>
+              <!-- <div class="accordeon__content"> -->
+              <p class="accordeon__text">
+                Sed consectetur quam id neque fermentum accumsan. Praesent
+                luctus vestibulum dolor, ut condimentum urna vulputate eget.
+                Cras in ligula quis est pharetra mattis sit amet pharetra purus.
+                Sed sollicitudin ex et ultricies bibendum.
+              </p>
+              <!-- </div> -->
             </div>
             <!-- /.accordeon__item -->
             <div class="accordeon__item">
@@ -289,15 +294,15 @@
                 <img src="/icon-arrow.139857be.svg" alt="arrow" class="accordeon__arrow">
               </div>
               <!-- /.accordeon__header -->
-              <div class="accordeon__content">
-                <p class="accordeon__text">
-                  Integer condimentum ipsum id imperdiet finibus. Vivamus in
-                  placerat mi, at euismod dui. Aliquam vitae neque eget nisl
-                  gravida pellentesque non ut velit. More Info 35,000+ already
-                  joined Stay up-to-date with what we’re doing Contact Us
-                  Features Pricing Contact
-                </p>
-              </div>
+              <!-- <div class="accordeon__content"> -->
+              <p class="accordeon__text">
+                Integer condimentum ipsum id imperdiet finibus. Vivamus in
+                placerat mi, at euismod dui. Aliquam vitae neque eget nisl
+                gravida pellentesque non ut velit. More Info 35,000+ already
+                joined Stay up-to-date with what we’re doing Contact Us Features
+                Pricing Contact
+              </p>
+              <!-- </div> -->
             </div>
             <!-- /.accordeon__item -->
           </div>
@@ -358,18 +363,22 @@
         </div>
         <!-- /.footer__nav -->
         <div class="footer__icons">
-          <img src="/icon-facebook.cac9495c.svg" alt="facebook logo" class="footer__icon-img">
-          <img src="/icon-twitter.6ade55c3.svg" alt="twitter logo" class="footer__icon-img">
+          <a href="#">
+            <img src="/icon-facebook.cac9495c.svg" alt="facebook logo" class="footer__icon-img">
+          </a>
+          <a href="#">
+            <img src="/icon-twitter.6ade55c3.svg" alt="twitter logo" class="footer__icon-img">
+          </a>
         </div>
       </div>
     </footer>
     <!-- /.footer -->
 
-    <footer>
+    <div>
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Leonid Radostnov</a>.
       </p>
-    </footer>
+    </div>
   </body>
 </html>
