@@ -1,0 +1,84 @@
+@use '../abstract/index' as *;
+
+.features-section {
+  padding: 5rem 0;
+
+  // .features-section__text
+
+  &__text {
+  }
+
+  // .features-section__title
+
+  &__title {
+  }
+
+  // .features-section__tab
+
+  &__tab {
+  }
+}
+.container {
+}
+.tab {
+  // .tab__buttons
+
+  &__buttons {
+  }
+
+  // .tab__btn
+
+  &__btn {
+    // .tab__btn_active
+
+    &_active {
+    }
+  }
+
+  // .tab__content
+
+  &__content {
+  }
+}
+.content-tab {
+  // .content-tab__element
+
+  &__element {
+    // .content-tab__element_active
+
+    &_active {
+    }
+  }
+
+  // .content-tab__img
+
+  &__img {
+  }
+
+  // .content-tab__text
+
+  &__text {
+  }
+}
+.element-tab {
+}
+.text-tab {
+  // .text-tab__title
+
+  &__title {
+  }
+
+  // .text-tab__subtitle
+
+  &__subtitle {
+  }
+
+  // .text-tab__btn
+
+  &__btn {
+  }
+}
+.btn {
+}
+.element-tab {
+}

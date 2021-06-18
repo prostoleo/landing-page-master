@@ -41,8 +41,8 @@
     background: $neutral-dark-blue;
     z-index: 10;
 
-    // clip-path: circle(0% at 100% 0);
-    clip-path: circle(150% at 50% 50%);
+    clip-path: circle(0% at 100% 0);
+    // clip-path: circle(150% at 50% 50%);
 
     transition: clip-path 400ms ease-in-out;
 
@@ -66,8 +66,8 @@
   // .header__main-logo
 
   &__main-logo {
-    background: #fff;
-    mix-blend-mode: lighten;
+    // background: #fff;
+    mix-blend-mode: screen;
   }
 
   // .header__main-close

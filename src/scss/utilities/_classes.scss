@@ -1,0 +1,46 @@
+@use '../abstract/index' as *;
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 0.8em 0.35em;
+  font-size: 1.8rem;
+  line-height: 1;
+  border-radius: 0.5rem;
+
+  border: 1px solid transparent;
+
+  box-shadow: 2px 5px 7px $primary-soft-blue-shadow,
+    -2px 5px 7px $primary-soft-blue-shadow;
+
+  transition: all 350ms ease-in-out;
+}
+
+.btn-primary {
+  color: white;
+  background-color: $primary-soft-blue;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $primary-soft-blue;
+    background: transparent;
+    color: $primary-soft-blue;
+
+    outline: none;
+  }
+}
+
+.btn-secondary {
+  color: $neutral-dark-blue;
+
+  box-shadow: 2px 5px 7px $neutral-dark-blue-shadow,
+    -2px 5px 7px $neutral-dark-blue-shadow;
+
+  &:hover,
+  &:focus {
+    border: 1px solid $neutral-dark-blue;
+    background: transparent;
+    color: $neutral-dark-blue;
+    outline: none;
+  }
+}

@@ -79,8 +79,8 @@
       <section class="hero-section" id="hero">
         <div class="container">
           <div class="hero-section__content content-hero">
-            <div class="content-hero__col _left-col">
-              <h1 class="content-hero__title">A simple Bookmark Manager</h1>
+            <div class="content-hero__col content-hero__left-col">
+              <h1 class="content-hero__title">A Simple Bookmark Manager</h1>
               <p class="content-hero__text">
                 A clean and simple interface to organize your favourite
                 websites. Open a new browser tab and see your sites load
@@ -88,16 +88,22 @@
               </p>
 
               <div class="content-hero__buttons hero-buttons">
-                <button class="btn hero-buttons__btn her0-buttons__btn--primary">
+                <button class="
+                    btn btn-primary
+                    hero-buttons__btn hero-buttons__btn--primary
+                  ">
                   Get in on Chrome
                 </button>
-                <button class="btn hero-buttons__btn her0-buttons__btn--secondary">
+                <button class="
+                    btn btn-secondary
+                    hero-buttons__btn hero-buttons__btn--secondary
+                  ">
                   Get in on Firefox
                 </button>
               </div>
             </div>
             <!-- /.content-hero__col -->
-            <div class="content-hero__col _right-col">
+            <div class="content-hero__col content-hero__right-col">
               <img src="/illustration-hero.ebc62eec.svg" alt="hero picture" class="content-hero__img">
             </div>
             <!-- /.content-hero__col -->
@@ -314,7 +320,12 @@
             </h2>
 
             <form action="#" class="contact-section__form form-contact">
-              <input type="email" name="email" id="input-email" class="form-contact__input">
+              <div class="form-contact__wrapper">
+                <input type="email" name="email" id="input-email" class="form-contact__input">
+                <div class="form-contact__error">
+                  Whoops, make sure it's an email
+                </div>
+              </div>
               <button class="btn form-contact__submit">Contact Us</button>
             </form>
           </div>

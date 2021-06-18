@@ -1,7 +1,12 @@
 @use './fonts' as *;
 
+* {
+  font-family: $Rubik;
+}
+
 html {
   font-size: 10px;
+  overflow-x: hidden !important;
 }
 
 body {
@@ -9,5 +14,5 @@ body {
   margin: 0;
   font-family: $Rubik;
   font-size: 1.8rem;
-  // overflow-x: hidden;
+  overflow-x: hidden !important;
 }
