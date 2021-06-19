@@ -442,6 +442,19 @@ id) /*: string*/
 }
 
 },{}],"SXDIM":[function(require,module,exports) {
+require("./menu.js");
+
+},{"./menu.js":"3Uxhu"}],"3Uxhu":[function(require,module,exports) {
+const btnOpen = document.querySelector(".header__menu");
+const btnClose = document.querySelector(".header__main-close");
+const menu = document.querySelector(".header__main");
+
+const openMenu = () => menu.classList.add("open");
+const closeMenu = () => menu.classList.remove("open");
+
+btnOpen.addEventListener("click", openMenu);
+
+btnClose.addEventListener("click", closeMenu);
 
 },{}]},["3AS1F","SXDIM"], "SXDIM", "parcelRequire6daa")
 

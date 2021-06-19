@@ -8,6 +8,11 @@
 html {
   font-size: 10px;
   overflow-x: hidden !important;
+  scroll-behavior: smooth;
+
+  @include mq(xlg) {
+    font-size: 12px !important;
+  }
 }
 
 body {
@@ -30,4 +35,5 @@ h6 {
 
 p {
   color: $neutral-grayish-blue;
+  max-width: 60ch;
 }

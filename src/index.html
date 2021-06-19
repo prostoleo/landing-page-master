@@ -29,9 +29,15 @@
     <script src="./js/main.js" defer></script>
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      .copy {
+        max-height: auto;
+        text-align: center;
+      }
       .attribution {
         font-size: 11px;
         text-align: center;
+
+        margin: 0 auto;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -70,16 +76,16 @@
           <nav class="header__main-nav nav-header">
             <ul class="nav-header__list">
               <li class="nav-header__item">
-                <a href="" class="nav-header__link">Features</a>
+                <a href="#features" class="nav-header__link">Features</a>
               </li>
               <li class="nav-header__item">
-                <a href="" class="nav-header__link">Pricing</a>
+                <a href="#" class="nav-header__link">Pricing</a>
               </li>
               <li class="nav-header__item">
-                <a href="" class="nav-header__link">Contact</a>
+                <a href="#contact" class="nav-header__link">Contact</a>
               </li>
               <li class="nav-header__item">
-                <a href="" class="nav-header__link nav-header__link-btn"
+                <a href="#" class="nav-header__link nav-header__link-btn"
                   >Login</a
                 >
               </li>
@@ -87,18 +93,20 @@
           </nav>
           <div class="header__icons-wrapper">
             <a href="#" class="header__icons-link">
-              <img
+              <i class="fab fa-facebook-square"></i>
+              <!-- <img
                 src="./img/icon-facebook.svg"
                 alt="facebook logo"
                 class="header__icons-img"
-              />
+              /> -->
             </a>
             <a href="#" class="header__icons-link">
-              <img
+              <i class="fab fa-twitter"></i>
+              <!-- <img
                 src="./img/icon-twitter.svg"
                 alt="twitter logo"
                 class="header__icons-img"
-              />
+              /> -->
             </a>
           </div>
         </div>
@@ -436,51 +444,56 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="footer__logo">
-          <a href="#" class="footer__logo-link">
-            <img
-              src="./img/logo-bookmark.svg"
-              alt="logo bookmark"
-              class="footer__logo-img"
-            />
-          </a>
+        <div class="footer__content">
+          <div class="footer__logo">
+            <a href="#" class="footer__logo-link">
+              <img
+                src="./img/logo-bookmark.svg"
+                alt="logo bookmark"
+                class="footer__logo-img"
+              />
+            </a>
+          </div>
+          <!-- /.footer__logo -->
+          <div class="footer__nav nav-footer">
+            <ul class="nav-footer__list">
+              <li class="nav-footer__item">
+                <a href="#features" class="nav-footer__link">Features</a>
+              </li>
+              <li class="nav-footer__item">
+                <a href="#" class="nav-footer__link">Pricing</a>
+              </li>
+              <li class="nav-footer__item">
+                <a href="#contact" class="nav-footer__link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!-- /.footer__nav -->
+          <div class="footer__icons">
+            <a href="#">
+              <i class="fab fa-twitter"></i>
+              <!-- <img
+                src="./img/icon-facebook.svg"
+                alt="facebook logo"
+                class="footer__icon-img"
+              /> -->
+            </a>
+            <a href="#">
+              <i class="fab fa-facebook-square"></i>
+              <!-- <img
+                src="./img/icon-twitter.svg"
+                alt="twitter logo"
+                class="footer__icon-img"
+              /> -->
+            </a>
+          </div>
         </div>
-        <!-- /.footer__logo -->
-        <div class="footer__nav nav-footer">
-          <ul class="nav-footer__list">
-            <li class="nav-footer__item">
-              <a href="#features" class="nav-footer__link">Features</a>
-            </li>
-            <li class="nav-footer__item">
-              <a href="#pricing" class="nav-footer__link">Pricing</a>
-            </li>
-            <li class="nav-footer__item">
-              <a href="#contact" class="nav-footer__link">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /.footer__nav -->
-        <div class="footer__icons">
-          <a href="#">
-            <img
-              src="./img/icon-facebook.svg"
-              alt="facebook logo"
-              class="footer__icon-img"
-            />
-          </a>
-          <a href="#">
-            <img
-              src="./img/icon-twitter.svg"
-              alt="twitter logo"
-              class="footer__icon-img"
-            />
-          </a>
-        </div>
+        <!-- /.footer__content -->
       </div>
     </footer>
     <!-- /.footer -->
 
-    <div>
+    <div class="copy">
       <p class="attribution">
         Challenge by
         <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"

@@ -14,12 +14,16 @@
 
   &__title {
     @extend %tpl-secondary-title;
+
+    margin-bottom: 0.5em;
   }
 
   // .download-section__p
 
   &__p {
+    margin: 0 auto;
     margin-bottom: 2.5em;
+    hyphens: none;
   }
 
   // .download-section__browsers
@@ -35,6 +39,17 @@
   align-items: center;
 
   gap: 2.5rem 0;
+
+  @include mq(med) {
+    flex-direction: row !important;
+    gap: 0 4% !important;
+    align-items: stretch !important;
+  }
+
+  @include mq(lg) {
+    justify-content: space-evenly !important;
+  }
+
   // .browsers-download__card
 
   &__card {
@@ -45,7 +60,7 @@
 
   grid-template-rows: repeat(4, auto);
   justify-items: center;
-  padding: 1.5em;
+  padding: 1em;
 
   box-shadow: 2px 5px 7px $neutral-dark-blue-shadow,
     -2px 5px 7px $neutral-dark-blue-shadow;
@@ -55,6 +70,8 @@
   background: url("../img/bg-dots.svg") no-repeat;
   background-size: contain;
   background-position: bottom 27% right;
+
+  text-align: center;
 
   // .card__img
 
@@ -66,12 +83,16 @@
 
   &__title {
     font-size: 2rem;
+
+    margin-bottom: 0.5em;
   }
 
   // .card__p
 
   &__p {
     margin-bottom: 4em;
+
+    hyphens: none;
   }
 }
 .btn {

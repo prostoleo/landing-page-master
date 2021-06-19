@@ -15,6 +15,10 @@
   // .header__logo
   &__logo {
     flex: 0 0 45%;
+
+    @include mq(lg) {
+      flex: 0 0 auto !important;
+    }
   }
 
   // .header__logo-link
@@ -52,6 +56,18 @@
     &.open {
       clip-path: circle(150% at 50% 50%);
     }
+
+    @include mq(lg) {
+      position: unset !important;
+      padding: unset !important;
+
+      background: transparent !important;
+      z-index: unset !important;
+      clip-path: unset !important;
+
+      display: flex !important;
+      align-items: center !important;
+    }
   }
 
   // .header__main-row
@@ -61,6 +77,10 @@
     align-items: center;
 
     margin-bottom: 1.5em;
+
+    @include mq(lg) {
+      display: none !important;
+    }
   }
 
   // .header__main-logo
@@ -98,6 +118,10 @@
     align-items: center;
 
     gap: 0 0.5em;
+
+    @include mq(lg) {
+      display: none !important;
+    }
   }
 
   // .header__icons-link
@@ -105,6 +129,16 @@
   &__icons-link {
     &:hover {
       opacity: 0.8;
+    }
+
+    i {
+      font-size: 2rem;
+      font-weight: 500;
+      color: white;
+
+      &:hover {
+        color: $primary-soft-red;
+      }
     }
   }
   // .header__icons-img
@@ -114,6 +148,11 @@
 
   // .header__menu
   &__menu {
+    cursor: pointer;
+
+    @include mq(lg) {
+      display: none !important;
+    }
   }
 
   // .header__menu-img
@@ -129,6 +168,13 @@
 
   &__list {
     width: 100%;
+
+    @include mq(lg) {
+      display: flex !important;
+      align-items: center;
+
+      gap: 0 3rem;
+    }
   }
 
   // .nav-header__item
@@ -146,6 +192,21 @@
     &:not(:last-of-type):hover {
       opacity: 0.8;
     }
+
+    @include mq(lg) {
+      display: inline-block !important;
+      border: none !important;
+      padding: 0.25em 0.5em !important;
+      width: max-content;
+
+      &:last-of-type {
+        margin-left: 1.5rem;
+      }
+
+      &:not(:last-of-type):hover {
+        opacity: unset;
+      }
+    }
   }
 
   // .nav-header__link
@@ -156,6 +217,17 @@
 
     text-transform: uppercase;
 
+    @include mq(lg) {
+      color: $neutral-dark-blue;
+      font-size: 1.8rem;
+      width: 100% !important;
+      display: inline-block !important;
+
+      &:hover {
+        color: $primary-soft-red;
+      }
+    }
+
     &-btn {
       border: 2px solid currentColor;
       display: block;
@@ -165,8 +237,24 @@
 
       position: relative;
 
+      @include mq(lg) {
+        padding: 0.5em 1em !important;
+        border-radius: 1rem;
+
+        background: $primary-soft-red;
+        color: white;
+
+        font-size: 1.8rem;
+        text-transform: uppercase;
+
+        border-color: $primary-soft-red !important;
+
+        box-shadow: 2px 5px 7px $neutral-dark-blue-shadow,
+          -2px 5px 7px $neutral-dark-blue-shadow;
+      }
+
       &::before {
-        content: '';
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -180,13 +268,23 @@
         z-index: -1;
 
         transition: all 300ms ease-in-out;
+
+        @include mq(lg) {
+          position: unset !important;
+        }
       }
 
       transition: all 300ms ease-in-out;
 
-      &:hover {
+      &:hover,
+      &:focus {
         opacity: 0.8;
         color: $neutral-dark-blue;
+
+        @include mq(lg) {
+          color: $primary-soft-red;
+          background: transparent;
+        }
 
         &::before {
           clip-path: circle(150% at 100% 0);
