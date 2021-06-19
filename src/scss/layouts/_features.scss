@@ -77,7 +77,7 @@
       color: $neutral-dark-blue;
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         bottom: 0;
         left: 50%;
@@ -107,7 +107,7 @@
     display: none;
     // display: flex;
 
-    // .content-tab__element_active
+    // .content-tab__item_active
 
     &_active {
       display: flex;
@@ -128,12 +128,15 @@
     &-wrapper {
       position: relative;
 
+      width: 70%;
+      max-width: 350px;
+
       /* @include mq(med) {
         max-width: 410px !important;
       } */
 
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 17.25%;
         right: 20%;

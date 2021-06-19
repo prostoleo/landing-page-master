@@ -442,9 +442,11 @@ id) /*: string*/
 }
 
 },{}],"SXDIM":[function(require,module,exports) {
-require("./menu.js");
+require('./menu.js');
+require('./tab.js');
+require('./accordeon.js');
 
-},{"./menu.js":"3Uxhu"}],"3Uxhu":[function(require,module,exports) {
+},{"./menu.js":"3Uxhu","./tab.js":"4J9zY","./accordeon.js":"5XvBW"}],"3Uxhu":[function(require,module,exports) {
 const btnOpen = document.querySelector(".header__menu");
 const btnClose = document.querySelector(".header__main-close");
 const menu = document.querySelector(".header__main");
@@ -455,6 +457,89 @@ const closeMenu = () => menu.classList.remove("open");
 btnOpen.addEventListener("click", openMenu);
 
 btnClose.addEventListener("click", closeMenu);
+
+},{}],"4J9zY":[function(require,module,exports) {
+function tabComponent(
+  tabBtnWrapperSelector,
+  tabBtnsSelector,
+  tabItemsSelector,
+  btnActiveClass,
+  tabActiveClass
+) {
+  const tabBtnsWrapper = document.querySelector(tabBtnWrapperSelector);
+  const tabBtns = document.querySelectorAll(tabBtnsSelector);
+  const tabItems = document.querySelectorAll(tabItemsSelector);
+
+  /* console.log('tabBtnsWrapper: ', tabBtnsWrapper);
+  console.log('tabBtns: ', tabBtns);
+  console.log('tabItems: ', tabItems); */
+
+  function clearState(btns, items) {
+    console.log('btns: ', btns);
+    console.log('items: ', items);
+
+    btns.forEach((btn) => btn.classList.remove(btnActiveClass));
+    items.forEach((item) => item.classList.remove(tabActiveClass));
+  }
+
+  function turnOnActive(btns, tabs, i, wrapper) {
+    console.log('btns: ', btns);
+    console.log('tabs: ', tabs);
+    console.log('i: ', i);
+    console.log('wrapper: ', wrapper);
+
+    btns[i].classList.add(btnActiveClass);
+    tabs[i].classList.add(tabActiveClass);
+    wrapper.dataset.tab = +i;
+  }
+
+  tabBtns.forEach((btn, i) => {
+    btn.addEventListener('click', () => {
+      clearState(tabBtns, tabItems);
+      turnOnActive(tabBtns, tabItems, i, tabBtnsWrapper);
+    });
+  });
+}
+
+tabComponent(
+  '.tab__buttons',
+  '.tab__btn',
+  '.content-tab__item',
+  'tab__btn_active',
+  'content-tab__item_active'
+);
+
+},{}],"5XvBW":[function(require,module,exports) {
+function accordeonComponent(
+  btnsSelector,
+  itemsSelector,
+  activeClass1,
+  activeClass2
+) {
+  const accordeonBtns = document.querySelectorAll(btnsSelector);
+  const tabItems = document.querySelectorAll(itemsSelector);
+  console.log('accordeonBtns: ', accordeonBtns);
+  console.log('tabItems: ', tabItems);
+
+  accordeonBtns.forEach((btn, i) => {
+    btn.addEventListener('click', (e) => {
+      const tab = e.target.closest(itemsSelector);
+      console.log('tab: ', tab);
+
+      if (!tab) return;
+
+      tab.classList.toggle(activeClass1);
+      tab.classList.toggle(activeClass2);
+    });
+  });
+}
+
+accordeonComponent(
+  '.accordeon__header',
+  '.accordeon__item',
+  'accordeon__item_active',
+  'open'
+);
 
 },{}]},["3AS1F","SXDIM"], "SXDIM", "parcelRequire6daa")
 

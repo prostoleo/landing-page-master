@@ -58,6 +58,7 @@
       .accordeon__text {
         display: block;
 
+        transition: all 350ms ease-in-out;
         /* &.open {
           max-height: 100%;
           overflow: unset;
@@ -69,6 +70,13 @@
       .accordeon__text {
         max-height: 100%;
         overflow: unset;
+        transform: translateY(0px);
+        transition: all 350ms ease-in-out;
+      }
+
+      .accordeon__arrow {
+        transform: rotate(180deg);
+        transition: all 150ms ease-in-out;
       }
     }
   }
@@ -90,6 +98,8 @@
   &__title {
     font-size: 1.8rem;
     font-weight: 500;
+
+    flex: 1 1 80%;
   }
 
   // .accordeon__arrow
@@ -97,6 +107,9 @@
   &__arrow {
     flex: 0 0 15px;
     height: 15px;
+
+    transform: rotate(0deg);
+    transition: all 150ms ease-in-out;
   }
 
   // .accordeon__content
@@ -110,6 +123,8 @@
     display: none;
     max-height: 0;
     overflow: hidden;
+
+    transform: translateY(-100px);
 
     // margin-top: 0.75rem;
     // padding: 1.5rem 0;
