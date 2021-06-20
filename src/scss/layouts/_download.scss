@@ -38,12 +38,30 @@
   flex-direction: column;
   align-items: center;
 
-  gap: 2.5rem 0;
+  // gap: 2.5rem 0;
+
+  & > * {
+    margin-top: 2.5rem;
+  }
+
+  & > *:first-of-type {
+    margin-top: 0;
+  }
 
   @include mq(med) {
     flex-direction: row !important;
-    gap: 0 4% !important;
     align-items: stretch !important;
+
+    // gap: 0 4% !important;
+
+    & > * {
+      margin-top: 0rem !important;
+      margin-left: 4%;
+    }
+
+    & > *:first-of-type {
+      margin-left: 0;
+    }
   }
 
   @include mq(lg) {
@@ -67,7 +85,7 @@
 
   border-radius: 1em;
 
-  background: url("../img/bg-dots.svg") no-repeat;
+  background: url('../img/bg-dots.svg') no-repeat;
   background-size: contain;
   background-position: bottom 27% right;
 

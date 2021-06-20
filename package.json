@@ -30,10 +30,18 @@
       "autoprefixer": {
         "overrideBrowserslist": [
           "> 0.25%",
-          "last 4 versions",
-          "ie >= 9"
+          "last 6 versions",
+          "ie >= 11"
         ]
       }
     }
-  }
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env"
+      ]
+    ]
+  },
+  "browserslist": "< 0.25%, not dead"
 }

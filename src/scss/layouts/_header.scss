@@ -48,22 +48,39 @@
     clip-path: circle(0% at 100% 0);
     // clip-path: circle(150% at 50% 50%);
 
-    transition: clip-path 400ms ease-in-out;
+    transform: translateX(100%);
+    transition: transform 400ms ease-in-out;
+    // transition: clip-path 400ms ease-in-out;
 
     display: grid;
     grid-template-rows: auto 1fr auto;
 
     &.open {
-      clip-path: circle(150% at 50% 50%);
+      transform: translateX(0%);
+      // clip-path: circle(150% at 50% 50%);
+    }
+
+    @supports (clip-path: circle(0% at 100% 0)) {
+      clip-path: circle(0% at 100% 0);
+      transform: translateX(0%);
+      transition: clip-path 400ms ease-in-out;
+
+      &.open {
+        clip-path: circle(150% at 50% 50%);
+      }
     }
 
     @include mq(lg) {
-      position: unset !important;
-      padding: unset !important;
+      // position: unset !important;
+      position: static !important;
+      // padding: unset !important;
+      padding: 0 !important;
+      transform: translateX(0%);
 
       background: transparent !important;
-      z-index: unset !important;
-      clip-path: unset !important;
+      // z-index: unset !important;
+      z-index: initial !important;
+      clip-path: none !important;
 
       display: flex !important;
       align-items: center !important;
@@ -117,7 +134,9 @@
     display: flex;
     align-items: center;
 
-    gap: 0 0.5em;
+    & > *:last-of-type {
+      margin-left: 0.5em;
+    }
 
     @include mq(lg) {
       display: none !important;
@@ -127,6 +146,8 @@
   // .header__icons-link
 
   &__icons-link {
+    display: inline-block;
+
     &:hover {
       opacity: 0.8;
     }
@@ -173,7 +194,9 @@
       display: flex !important;
       align-items: center;
 
-      gap: 0 3rem;
+      & > *:not(:first-of-type) {
+        margin-left: 2rem;
+      }
     }
   }
 
@@ -204,7 +227,8 @@
       }
 
       &:not(:last-of-type):hover {
-        opacity: unset;
+        opacity: none;
+        // opacity: unset;
       }
     }
   }
@@ -254,7 +278,7 @@
       }
 
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -262,15 +286,21 @@
         bottom: 0;
         border-radius: 0.5em;
 
-        clip-path: circle(0% at 100% 0);
+        // clip-path: circle(0% at 100% 0);
+        transform: translateX(120%);
         background: white;
 
         z-index: -1;
 
         transition: all 300ms ease-in-out;
 
+        @supports (clip-path: circle(0% at 100% 0)) {
+          clip-path: circle(0% at 100% 0);
+        }
+
         @include mq(lg) {
-          position: unset !important;
+          // position: unset !important;
+          position: static !important;
         }
       }
 
@@ -287,7 +317,10 @@
         }
 
         &::before {
-          clip-path: circle(150% at 100% 0);
+          transform: translateX(0%);
+          @supports (clip-path: circle(150% at 100% 0)) {
+            clip-path: circle(150% at 100% 0);
+          }
         }
       }
     }

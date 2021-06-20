@@ -1,3 +1,5 @@
+import 'core-js/stable';
+
 function accordeonComponent(
   btnsSelector,
   itemsSelector,

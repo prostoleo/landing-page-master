@@ -112,11 +112,17 @@
     &_active {
       display: flex;
       flex-direction: column;
-      gap: 5rem 0;
+
+      & > *:first-of-type {
+        margin-bottom: 5rem;
+      }
 
       @include mq(lg) {
         flex-direction: row !important;
-        gap: 0 4% !important;
+        & > *:first-of-type {
+          margin-bottom: 0rem !important;
+          margin-right: 4%;
+        }
       }
     }
   }

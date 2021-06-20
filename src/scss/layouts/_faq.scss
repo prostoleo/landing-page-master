@@ -25,6 +25,7 @@
   // .faq-section__p
 
   &__p {
+    margin: 0 auto;
   }
 
   // .faq-section__accordeon
@@ -44,6 +45,24 @@
 .container {
 }
 .accordeon {
+  // .accordeon__text
+
+  &__text {
+    // display: none;
+    max-height: 0;
+    overflow: hidden;
+
+    // transform: translateY(-100px);
+    transform: scaleY(0%);
+
+    // margin-top: 0.75rem;
+    // padding: 1.5rem 0;
+
+    margin: 0.75rem 0;
+
+    transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
+  }
+
   // .accordeon__item
 
   &__item {
@@ -64,21 +83,38 @@
           overflow: unset;
         } */
       }
+
+      &.open {
+        .accordeon__text {
+          // max-height: 100%;
+          max-height: 600px;
+          overflow: initial;
+          // transform: translateY(0px);
+          transform: scaleY(100%);
+          transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
+        }
+
+        .accordeon__arrow {
+          transform: rotate(180deg);
+          transition: all 150ms ease-in-out;
+        }
+      }
     }
 
-    &.open {
+    /* &.open {
       .accordeon__text {
-        max-height: 100%;
+        // max-height: 100%;
+        max-height: 600px;
         overflow: unset;
         transform: translateY(0px);
-        transition: all 350ms ease-in-out;
+        transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
       }
 
       .accordeon__arrow {
         transform: rotate(180deg);
         transition: all 150ms ease-in-out;
       }
-    }
+    } */
   }
 
   // .accordeon__header
@@ -115,22 +151,5 @@
   // .accordeon__content
 
   &__content {
-  }
-
-  // .accordeon__text
-
-  &__text {
-    display: none;
-    max-height: 0;
-    overflow: hidden;
-
-    transform: translateY(-100px);
-
-    // margin-top: 0.75rem;
-    // padding: 1.5rem 0;
-
-    margin: 0.75rem 0;
-
-    transition: all 350ms ease-in-out;
   }
 }

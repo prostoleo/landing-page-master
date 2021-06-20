@@ -10,11 +10,18 @@
     flex-direction: column-reverse;
     align-items: center;
 
-    gap: 4.5rem 0;
+    // gap: 4.5rem 0;
+    & > *:last-of-type {
+      margin-top: 4.5rem;
+    }
 
     @include mq(med) {
       flex-direction: row !important;
-      gap: 2rem 0 !important;
+
+      & > *:last-of-type {
+        margin-top: 0rem !important;
+        margin-left: 2rem !important;
+      }
     }
   }
 }
@@ -50,7 +57,7 @@
     }
 
     &::after {
-      content: "";
+      content: '';
       position: absolute;
       top: 22%;
       left: 20%;
@@ -127,8 +134,11 @@
   @include mq(lg) {
     display: flex !important;
     align-items: center !important;
+    gap: 0 !important;
 
-    gap: 0 5% !important;
+    & > *:last-of-type {
+      margin-left: 5% !important;
+    }
   }
 
   // .hero-buttons__btn

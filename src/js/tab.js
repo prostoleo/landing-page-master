@@ -1,3 +1,5 @@
+import 'core-js/stable';
+
 function tabComponent(
   tabBtnWrapperSelector,
   tabBtnsSelector,
