@@ -49,8 +49,9 @@
 
   &__text {
     // display: none;
-    max-height: 0;
-    overflow: hidden;
+    max-height: 0px;
+    height: auto;
+    // overflow: hidden;
 
     // transform: translateY(-100px);
     transform: scaleY(0%);
@@ -60,7 +61,21 @@
 
     margin: 0.75rem 0;
 
-    transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
+    // transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
+    transition: overflow 350ms ease-in-out, max-height 350ms ease-in-out,
+      transform 350ms ease-in-out;
+  }
+
+  // .accordeon__arrow
+
+  &__arrow {
+    flex: 0 0 15px;
+    height: 15px;
+
+    @include adaptive-value(margin-left, 30, 15);
+
+    transform: rotate(0deg);
+    transition: all 150ms ease-in-out;
   }
 
   // .accordeon__item
@@ -71,33 +86,36 @@
     margin-bottom: 2.5rem;
     padding: 1.5rem 0;
 
+    transition: all 350ms ease-in-out;
+
     // .accordeon__item_active
 
-    &_active {
+    /* &_active {
       .accordeon__text {
-        display: block;
+        // display: block;
 
         transition: all 350ms ease-in-out;
-        /* &.open {
-          max-height: 100%;
-          overflow: unset;
-        } */
+        // &.open {
+        //   max-height: 100%;
+        //   overflow: unset;
+        // }
+      }
+    } */
+
+    &.open {
+      .accordeon__text {
+        // max-height: 100%;
+        max-height: 600px;
+        overflow: initial;
+        transform: scaleY(100%);
+        // transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
+        transition: transform 350ms ease-in-out, max-height 350ms ease-in-out,
+          overflow 350ms ease-in-out;
       }
 
-      &.open {
-        .accordeon__text {
-          // max-height: 100%;
-          max-height: 600px;
-          overflow: initial;
-          // transform: translateY(0px);
-          transform: scaleY(100%);
-          transition: all 350ms ease-in-out, max-height 350ms ease-in-out;
-        }
-
-        .accordeon__arrow {
-          transform: rotate(180deg);
-          transition: all 150ms ease-in-out;
-        }
+      .accordeon__arrow {
+        transform: rotate(180deg);
+        transition: all 150ms ease-in-out;
       }
     }
 
@@ -136,16 +154,6 @@
     font-weight: 500;
 
     flex: 1 1 80%;
-  }
-
-  // .accordeon__arrow
-
-  &__arrow {
-    flex: 0 0 15px;
-    height: 15px;
-
-    transform: rotate(0deg);
-    transition: all 150ms ease-in-out;
   }
 
   // .accordeon__content

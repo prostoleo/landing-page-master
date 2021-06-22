@@ -11,7 +11,7 @@
     align-items: center;
 
     // gap: 4.5rem 0;
-    & > *:last-of-type {
+    & > *:first-of-type {
       margin-top: 4.5rem;
     }
 
@@ -46,6 +46,7 @@
 
   &__right-col {
     position: relative;
+    max-width: 400px;
 
     @include mq(med) {
       transform: translateX(50px) scale(1.2);

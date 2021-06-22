@@ -18,7 +18,7 @@ function accordeonComponent(
 
       if (!tab) return;
 
-      tab.classList.toggle(activeClass1);
+      // tab.classList.toggle(activeClass1);
       tab.classList.toggle(activeClass2);
     });
   });

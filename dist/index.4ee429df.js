@@ -446,9 +446,10 @@ id) /*: string*/
 require("./menu.js");
 require("./tab.js");
 require("./accordeon.js");
+require("./input.js");
 require("./gsap.js");
 
-},{"./menu.js":"3Uxhu","./tab.js":"4J9zY","./accordeon.js":"5XvBW","./gsap.js":"21h0m"}],"3Uxhu":[function(require,module,exports) {
+},{"./menu.js":"3Uxhu","./tab.js":"4J9zY","./accordeon.js":"5XvBW","./gsap.js":"21h0m","./input.js":"44Z7c"}],"3Uxhu":[function(require,module,exports) {
 "use strict";
 var btnOpen = document.querySelector(".header__menu");
 var btnClose = document.querySelector(".header__main-close");
@@ -11919,7 +11920,7 @@ function accordeonComponent(btnsSelector, itemsSelector, activeClass1, activeCla
       var tab = e.target.closest(itemsSelector);
       console.log('tab: ', tab);
       if (!tab) return;
-      tab.classList.toggle(activeClass1);
+      // tab.classList.toggle(activeClass1);
       tab.classList.toggle(activeClass2);
     });
   });
@@ -11928,38 +11929,144 @@ accordeonComponent('.accordeon__header', '.accordeon__item', 'accordeon__item_ac
 
 },{"core-js/stable":"1PFvP"}],"21h0m":[function(require,module,exports) {
 "use strict";
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || (/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/).test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+  return arr2;
+}
 window.addEventListener('DOMContentLoaded', function () {
   gsap.registerPlugin(ScrollTrigger);
   console.log('ScrollTrigger: ', ScrollTrigger);
   var tl = gsap.timeline({});
   tl.from('.content-hero__left-col', {
-    duration: 1.5,
+    duration: 1.25,
     ease: 'Power4.easeOut',
     x: '-30%',
     opacity: 0,
-    delay: 0.5
+    delay: 0.75
   });
-  /*let tlFeatures = gsap.timeline({
-  ScrollTrigger: {
-  trigger: '.hero-section',
-  start: '200px bottom',
+  var tlSection = gsap.timeline({});
+  // =====================================
+  // todo 1 вариант - работает! - класс для скыртия не активен в scss
+  /*gsap.set('.download-section', {
+  opacity: 0,
+  y: '20%',
+  });
+  
+  ScrollTrigger.create({
+  markers: true,
+  trigger: '.download-section',
+  start: '-10% 50%',
+  end: 'bottom 90%',
+  
+  onEnter: ({ isActive }) => {
+  if (isActive) {
+  tlSection.to('.download-section', {
+  duration: 1.5,
+  // opacity: 0,
+  // y: '20%',
+  opacity: 1,
+  y: 0,
+  });
+  }
   },
   });*/
-  /*tlFeatures.from('.features-section', {
-  duration: 0.75,
+  // =====================================
+  // todo 2 вариант - пробую с классом из scss - не получилось!
+  /*// gsap.set('.download-section', {
+  //   opacity: 0,
+  //   y: '20%',
+  // });
+  
+  gsap.to('.download-section', {
+  scrollTrigger: {
+  markers: true,
+  trigger: '.download-section',
+  start: '-10% 50%',
+  end: 'bottom 90%',
+  toggleClass: 'hidden',
+  // ease: 'power2',
+  },
+  });*/
+  // =====================================
+  // todo 3 вариант - отдельно timeline с scrollTrigger - а затем навешиваем анимацию - работает!
+  /*let tlSections = gsap.timeline({
+  scrollTrigger: {
+  markers: true,
+  trigger: '.download-section',
+  start: '-10% 50%',
+  end: 'bottom 90%',
+  },
+  });
+  
+  tlSections.from('.download-section', {
   opacity: 0,
   y: '20%',
   });*/
-  var tlSection = gsap.timeline({});
-  tlSection.from('.download-section', {
-    ScrollTrigger: {
-      // trigger: '.download-section',
-      start: 'top 90%'
-    },
-    duration: 5.75,
-    opacity: 0,
-    y: '20%'
+  // =====================================
+  // todo 4 вариант - аналогично 3 - но ко всем нужным секциям
+  // * не первая и не последняя секция
+  var allSectionsNotFirstAndLast = _toConsumableArray(document.querySelectorAll('section')).filter(function (el, i, arr) {
+    return i !== 0 && i !== arr.length - 1;
   });
+  console.log('allSectionsNotFirstAndLast: ', allSectionsNotFirstAndLast);
+  allSectionsNotFirstAndLast.forEach(function (section) {
+    gsap.from(section, {
+      opacity: 0,
+      y: '20%',
+      duration: 1,
+      ease: 'Power2.easeOut',
+      delay: 0,
+      scrollTrigger: {
+        // markers: true,
+        trigger: section,
+        // start: '-5% 25%',
+        start: '-20% 25%'
+      }
+    });
+  });
+});
+
+},{}],"44Z7c":[function(require,module,exports) {
+"use strict";
+var form = document.querySelector('.form-contact');
+console.log('form: ', form);
+var input = form.querySelector('#input-email');
+console.log('input: ', input);
+function validEmail(str) {
+  var regName = /^[a-zA-z_\.0-9]+@[a-z0-9]+\.[a-z]{2,5}$/g;
+  return regName.test(str);
+}
+input.addEventListener('input', function (e) {
+  input.classList.remove('confirm', 'error');
+  var value = e.target.value;
+  if (value.trim() !== '') {
+    validEmail(value) ? input.classList.add('confirm') : input.classList.add('error');
+  } else {
+    input.classList.remove('confirm', 'error');
+  }
 });
 
 },{}]},["3AS1F","SXDIM"], "SXDIM", "parcelRequire6daa")

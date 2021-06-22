@@ -88,36 +88,55 @@
       max-width: 60rem !important;
     } */
 
-    &:focus {
+    /* &:focus {
       // border: 3px solid rgb(32, 190, 230);
       outline: 3px solid $neutral-dark-blue !important;
-    }
+    } */
 
     &.error {
       // outline: 2px solid $primary-soft-red;
       border: 3px solid $primary-soft-red;
 
-      .form-contact__error {
-        display: block;
+      & ~ .form-contact__error {
+        display: block !important;
+      }
+    }
+
+    &.confirm {
+      // outline: 2px solid $primary-soft-red;
+      border: 3px solid $primary-soft-green;
+
+      & ~ .form-contact__confirm {
+        display: block !important;
       }
     }
   }
 
   // .form-contact__error
 
-  &__error {
+  &__error,
+  &__confirm {
     text-align: left;
 
     font-style: italic;
-    font-size: 1.2rem;
-
-    background: $primary-soft-red;
+    font-weight: 500;
+    font-size: 1.4rem;
 
     padding: 0.4em 1em;
     border-bottom-left-radius: 0.5em;
     border-bottom-right-radius: 0.5em;
 
     display: none;
+  }
+
+  &__error {
+    background: $primary-soft-red;
+  }
+
+  // .form-contact__confirm
+
+  &__confirm {
+    background: $primary-soft-green;
   }
 
   // .form-contact__submit
