@@ -1,3 +1,5 @@
+import 'core-js/stable';
+
 window.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
   console.log('ScrollTrigger: ', ScrollTrigger);
@@ -102,4 +104,13 @@ window.addEventListener('DOMContentLoaded', () => {
       },
     });
   });
+
+  //============================================
+  //todo анимация боковых блоков
+  const tabActiveItem = document.getElementsByClassName('content-tab__item_active');
+  console.log('tabActiveItem: ', tabActiveItem);
+
+  // const tabActiveItemChildren = tabActiveItem.children;
+  // const tabActiveItemChildren = tabActiveItem.children;
+  // console.log('tabActiveItemChildren: ', tabActiveItemChildren);
 });
