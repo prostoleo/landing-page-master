@@ -1,8 +1,6 @@
 const form = document.querySelector('.form-contact');
-console.log('form: ', form);
 
 const input = form.querySelector('#input-email');
-console.log('input: ', input);
 
 function validEmail(str) {
   const regName = /^[a-zA-z_\.0-9]+@[a-z0-9]+\.[a-z]{2,5}$/g;

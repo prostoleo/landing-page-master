@@ -46,18 +46,15 @@
     z-index: 10;
 
     clip-path: circle(0% at 100% 0);
-    // clip-path: circle(150% at 50% 50%);
 
     transform: translateX(100%);
     transition: transform 400ms ease-in-out;
-    // transition: clip-path 400ms ease-in-out;
 
     display: grid;
     grid-template-rows: auto 1fr auto;
 
     &.open {
       transform: translateX(0%);
-      // clip-path: circle(150% at 50% 50%);
     }
 
     @supports (clip-path: circle(0% at 100% 0)) {
@@ -71,14 +68,11 @@
     }
 
     @include mq(lg) {
-      // position: unset !important;
       position: static !important;
-      // padding: unset !important;
       padding: 0 !important;
       transform: translateX(0%);
 
       background: transparent !important;
-      // z-index: unset !important;
       z-index: initial !important;
       clip-path: none !important;
 

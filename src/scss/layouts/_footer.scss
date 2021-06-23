@@ -52,8 +52,6 @@
     align-items: center;
     justify-content: center;
 
-    // gap: 0 2rem;
-
     & > *:last-of-type {
       margin-left: 2rem;
     }
@@ -90,7 +88,6 @@
 
     @include mq(med) {
       display: flex !important;
-      // gap: 0.5rem 0;
       margin-bottom: 0 !important;
 
       & > * {
@@ -124,7 +121,6 @@
 
     &:hover,
     &:focus {
-      // opacity: 0.8;
       color: $primary-soft-red;
     }
   }

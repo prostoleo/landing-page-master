@@ -105,7 +105,6 @@
 
   &__item {
     display: none;
-    // display: flex;
 
     // .content-tab__item_active
 
@@ -146,14 +145,12 @@
         position: absolute;
         top: 17.25%;
         right: 20%;
-        width: 100vw;
-        height: 90%;
+        width: 120%;
+        height: 100%;
         background-color: $primary-soft-blue;
-        /* border-top-right-radius: 30%;
-        border-bottom-right-radius: 30%; */
-        border-top-right-radius: 8.5rem;
-        border-bottom-right-radius: 8.5rem;
+        border-radius: 8.5rem;
         z-index: -1;
+        min-width: 300px;
       }
     }
   }

@@ -84,15 +84,6 @@
 
     color: $neutral-dark-blue;
 
-    /* @include mq(lg) {
-      max-width: 60rem !important;
-    } */
-
-    /* &:focus {
-      // border: 3px solid rgb(32, 190, 230);
-      outline: 3px solid $neutral-dark-blue !important;
-    } */
-
     &.error {
       // outline: 2px solid $primary-soft-red;
       border: 3px solid $primary-soft-red;
@@ -154,6 +145,7 @@
 
     padding: 0.85em 1.75em;
     font-size: 1.6rem;
+    font-weight: 500;
 
     @include mq(med) {
       margin-left: 2.5rem !important;

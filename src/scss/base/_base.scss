@@ -23,6 +23,10 @@ body {
   overflow-x: hidden !important;
 }
 
+body.lock {
+  overflow: hidden !important;
+}
+
 // prettier-ignore
 h1,
 h2,
